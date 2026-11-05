@@ -84,3 +84,52 @@ padding:10px 18px;border:1px solid #ffffff18;background:#ffffff0c;border-radius:
 backdrop-filter:blur(12px);font:11px Arial,sans-serif;letter-spacing:2px;
 opacity:0;z-index:100;transition:.5s}
 #toast.show{opacity:1}
+.shayari {
+  margin: 25px auto 0;
+  max-width: 520px;
+  padding: 20px;
+  border-top: 1px solid #ffb8dc55;
+  border-bottom: 1px solid #ffb8dc55;
+  animation: shayariAppear 2s ease forwards;
+}
+
+.shayari-heading {
+  font: 10px Arial, sans-serif;
+  letter-spacing: 4px;
+  color: #ffd978;
+  margin-bottom: 15px;
+}
+
+.poetry {
+  color: #ffe5f3;
+  font-size: 17px;
+  line-height: 2;
+  opacity: 0;
+  animation: poetryReveal 5s ease forwards;
+  animation-delay: 1s;
+  text-shadow: 0 0 15px #ff68b566;
+}
+
+@keyframes shayariAppear {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes poetryReveal {
+  from {
+    opacity: 0;
+    filter: blur(8px);
+    letter-spacing: 5px;
+  }
+  to {
+    opacity: 1;
+    filter: blur(0);
+    letter-spacing: 0;
+  }
+}
