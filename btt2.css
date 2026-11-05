@@ -1,0 +1,86 @@
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--pink:#ff68b5;--rose:#ff9ed1;--gold:#ffd978;--violet:#9d8cff}
+html,body{width:100%;height:100%;overflow:hidden}
+body{
+  background:#030208;color:#fff;
+  font-family:Georgia,"Times New Roman",serif;
+}
+#app{height:100%;position:relative;overflow:hidden;
+background:radial-gradient(circle at 50% 45%,#32103e 0,#100613 42%,#020107 90%)}
+#stars{position:absolute;inset:0;width:100%;height:100%}
+.aurora{position:absolute;width:70vw;height:70vw;left:15%;top:10%;
+background:radial-gradient(circle,rgba(255,82,175,.13),transparent 65%);
+filter:blur(30px);animation:aurora 7s ease-in-out infinite alternate}
+@keyframes aurora{to{transform:scale(1.2) translate(4%,-3%);opacity:.6}}
+.screen{position:absolute;inset:0;display:grid;place-items:center;text-align:center;
+transition:opacity 1s ease,transform 1s ease;z-index:5}
+.hidden{opacity:0!important;pointer-events:none;transform:scale(1.05)}
+.intro{padding:25px}
+.eyebrow,.tiny{font:10px Arial,sans-serif;letter-spacing:5px;color:#c9aac7}
+.intro h1{font-size:clamp(65px,18vw,150px);font-weight:400;font-style:italic;margin:18px 0}
+.intro h1 span,.name{
+background:linear-gradient(100deg,#fff,#ffacd9,#fff,#b9a8ff,#fff);
+background-size:300%;-webkit-background-clip:text;color:transparent;
+animation:shine 5s linear infinite}
+@keyframes shine{to{background-position:300%}}
+.intro p{font:14px Arial,sans-serif;color:#c5b4c5}
+.glass-btn{
+margin-top:30px;padding:14px 25px;border:1px solid rgba(255,255,255,.25);
+border-radius:50px;background:rgba(255,255,255,.06);color:#fff;
+font:11px Arial,sans-serif;letter-spacing:2px;cursor:pointer;
+box-shadow:0 0 30px rgba(255,105,181,.08);backdrop-filter:blur(12px);
+transition:.35s}
+.glass-btn:hover{transform:translateY(-3px) scale(1.03);background:rgba(255,105,181,.14)}
+.gift-screen{overflow:hidden}
+.gift-wrap{width:230px;height:210px;position:relative;cursor:pointer;
+perspective:800px;filter:drop-shadow(0 30px 35px rgba(0,0,0,.6))}
+.gift-box{position:absolute;left:25px;bottom:15px;width:180px;height:125px;
+border-radius:7px;background:linear-gradient(135deg,#ff4d9c,#8d1655);
+box-shadow:inset -20px -20px 35px #0003}
+.gift-box .vertical{position:absolute;left:75px;width:30px;height:125px;background:var(--gold)}
+.lid{position:absolute;left:18px;top:50px;width:194px;height:42px;border-radius:7px;
+background:linear-gradient(135deg,#ff79b7,#a01b62);z-index:5;
+box-shadow:0 8px 20px #0005;transition:1.2s cubic-bezier(.2,.8,.2,1)}
+.horizontal{position:absolute;left:0;top:7px;width:194px;height:27px;background:var(--gold)}
+.bow{position:absolute;top:-24px;width:55px;height:35px;background:var(--gold);
+border-radius:50% 50% 40% 40%;z-index:3}
+.bow.left{left:70px;transform:rotate(-30deg)}
+.bow.right{left:105px;transform:rotate(30deg)}
+.gift-glow{position:absolute;inset:0;border-radius:50%;
+background:radial-gradient(circle,rgba(255,107,186,.28),transparent 65%);
+filter:blur(15px);animation:pulse 1.8s infinite}
+@keyframes pulse{50%{transform:scale(1.25);opacity:.4}}
+.shine{position:absolute;inset:0;background:linear-gradient(120deg,transparent 35%,#fff5 50%,transparent 65%);
+transform:translateX(-100%);animation:shineBox 2.5s infinite}
+@keyframes shineBox{55%,100%{transform:translateX(100%)}}
+.gift-shadow{position:absolute;bottom:0;left:20px;width:190px;height:20px;
+background:#0008;border-radius:50%;filter:blur(8px)}
+.gift-wrap.open .lid{transform:translateY(-125px) rotate(10deg);opacity:0}
+.tap-text{margin-top:28px;font:12px Arial,sans-serif;letter-spacing:4px;color:#eee}
+.micro{margin-top:10px;font:11px Arial,sans-serif;color:#8e798c}
+.orbit{position:absolute;border:1px solid #ff9bd21c;border-radius:50%;
+animation:spin 12s linear infinite}
+.orbit1{width:320px;height:320px}.orbit2{width:450px;height:450px;animation-direction:reverse}
+@keyframes spin{to{transform:rotate(360deg)}}
+.halo{position:absolute;width:min(90vw,650px);height:min(90vw,650px);
+border-radius:50%;background:radial-gradient(circle,rgba(255,91,181,.12),transparent 68%);
+filter:blur(15px);animation:pulse 3s infinite}
+.content{position:relative;z-index:4;padding:25px;max-width:700px}
+.name{font-size:clamp(80px,22vw,175px);line-height:.9;font-style:italic;font-weight:400;margin:15px 0}
+.birthday-title{font:13px Arial,sans-serif;letter-spacing:8px;color:#f4c9e2}
+.rule{margin:25px auto;color:var(--gold);width:130px;border-bottom:1px solid #ff9dd33b;line-height:1px}
+.rule span{background:#14091a;padding:0 12px}
+.message{max-width:550px;margin:auto;color:#e8dce7;font-size:17px;line-height:1.8}
+.message em{color:#ffb8dc}.message strong{color:#ffd2e8;font-weight:400}
+.quote{position:absolute;bottom:25px;font:10px Arial,sans-serif;letter-spacing:3px;color:#7d687b}
+#particles{position:absolute;inset:0;z-index:30;pointer-events:none}
+.p{position:absolute;width:4px;height:4px;border-radius:50%;background:#fff;
+animation:particle 1.5s ease-out forwards;box-shadow:0 0 12px currentColor}
+@keyframes particle{to{transform:translate(var(--x),var(--y)) scale(0);opacity:0}}
+.heart{position:absolute;bottom:-30px;font-size:20px;animation:heart 5s ease-out forwards}
+@keyframes heart{to{transform:translate(var(--x),-110vh) rotate(25deg);opacity:0}}
+#toast{position:fixed;left:50%;bottom:30px;transform:translateX(-50%);
+padding:10px 18px;border:1px solid #ffffff18;background:#ffffff0c;border-radius:30px;
+backdrop-filter:blur(12px);font:11px Arial,sans-serif;letter-spacing:2px;
+opacity:0;z-index:100;transition:.5s}
+#toast.show{opacity:1}
